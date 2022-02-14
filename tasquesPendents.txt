@@ -9,7 +9,9 @@ com crear petits formularis on la icona es el botó
 camps ocults
 per a tasca nova, estat_inicial = pendent
 
-per als petits formularis, accio = "la que sigui"
+per als petits formularis,
+     id = el del registre actual
+     accio = "la que sigui: eliminar o esborrar"
 
 
 
