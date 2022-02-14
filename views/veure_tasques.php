@@ -14,6 +14,7 @@
     } else {
         x.style.display = "none";
     }
+    }
     </script>
 
   <title>Gestor de Tasques</title>
@@ -31,6 +32,100 @@
     </div>
   </div>
 </div>
+
+<div>
+        <button 
+            onclick="mostrar_ocultar_formulari()" 
+            type="submit"
+            class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
+        >
+            Crear una nova Tasca
+        </button>
+    </div>
+
+  <div class="bg-white px-8 rounded-md w-full" style="display:none" id="myDIV">
+      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
+        <div class="bg-indigo-50 min-w-full shadow rounded-lg overflow-hidden">
+          <form
+            method="post"
+            action="../controllers/TasquesController.php"
+            id=""
+          >
+            <div class="px-4 max-w-3xl mx-auto space-y-4 bg-indigo-50 py-2">
+              <div class="w-1/4">
+                <label for="userName" class=""></label>
+                <select
+                  name="userName"
+                  id="userName"
+                  class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option>Joan</option>
+                  <option>Fidel</option>
+                  <option>Albert</option>
+                </select>
+              </div>
+
+              <div class="flex space-x-16">
+                <div class="w-1/2">
+                  <label for="taskName" class=""></label>
+                  <input
+                    type="text"
+                    name="taskName"
+                    id="taskName"
+                    placeholder="assumpte"
+                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  />
+                </div>
+
+                <div class="w-1/6">
+                  <label for="startDate" class=""></label>
+                  <input
+                    type="text"
+                    name="startDate"
+                    id="startDate"
+                    placeholder="Hora Inici"
+                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  />
+                </div>
+
+                <div class="w-1/6">
+                  <label for="endDate" class=""></label>
+                  <input
+                    type="text"
+                    name="endDate"
+                    id="endDate"
+                    placeholder="Hora Final"
+                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  />
+                </div>
+              </div>
+
+              <div class="">
+                <label for="description" class=""></label>
+                <textarea
+                  type="textarea"
+                  cols="30"
+                  rows="5"
+                  name="description"
+                  id="description"
+                  placeholder="Escriu aquí la tasca"
+                  class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                ></textarea>
+              </div>            
+
+              <div>
+                <button
+                  type="submit"
+                  class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
+                >
+                  Desar la nova Tasca
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
 <div class="bg-white p-8 rounded-md w-full">
     <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
@@ -72,6 +167,7 @@
               </th>
             </tr>
           </thead>
+
           <tbody>
 <?php 
 
@@ -144,108 +240,8 @@
     </div>
   </div>
 
-    <div>
-        <button 
-            onclick="mostrar_ocultar_formulari()" 
-            type="submit"
-            class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
-        >
-            Crear una nova Tasca
-        </button>
-    </div>
+    
 
-  <div class="bg-white px-8 rounded-md w-full" id="myDIV">
-      <div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-        <div class="bg-indigo-50 min-w-full shadow rounded-lg overflow-hidden">
-          <form
-            method="post"
-            action="../controllers/TasquesController.php"
-            id=""
-          >
-            <div class="px-4 max-w-3xl mx-auto space-y-4 bg-indigo-50 py-2">
-              <div class="w-1/4">
-                <label for="userName" class=""></label>
-                <select
-                  name="userName"
-                  id="userName"
-                  class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option>Joan</option>
-                  <option>Fidel</option>
-                  <option>Albert</option>
-                </select>
-              </div>
-
-              <div class="flex space-x-16">
-                <div class="w-1/2">
-                  <label for="taskName" class=""></label>
-                  <input
-                    type="text"
-                    name="taskName"
-                    id="taskName"
-                    placeholder="assumpte"
-                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div class="w-1/6">
-                  <label for="startDate" class=""></label>
-                  <input
-                    type="text"
-                    name="startDate"
-                    id="startDate"
-                    placeholder="Hora Inici"
-                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  />
-                </div>
-
-                <div class="w-1/6">
-                  <label for="endDate" class=""></label>
-                  <input
-                    type="text"
-                    name="endDate"
-                    id="endDate"
-                    placeholder="Hora Final"
-                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  />
-                </div>
-              </div>
-
-              <div class="">
-                <label for="description" class=""></label>
-                <textarea
-                  type="textarea"
-                  cols="30"
-                  rows="5"
-                  name="description"
-                  id="description"
-                  placeholder="Escriu aquí la tasca"
-                  class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                ></textarea>
-              </div>
-
-            
-
-              <div>
-                <button
-                  type="submit"
-                  class="px-6 py-2 mx-auto w-full block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
-                >
-                  Desar
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+  </body>
 
 
-
-
-
-
-
-
-
-</body>
