@@ -4,6 +4,15 @@ repassar i finalitzar tasques_model.php
 esborrar tots els altres fitxers que hi ha dintre de carpeta models
 
 
+creats els fitxers index, modificar, mostrar
+juntar-los en un unic index.php que cridi al controlador
+
+
+crear finestra modal a la vista inici que pugui mostrar/modificar 
+una tasca
+
+
+Probar 
 
 
 
