@@ -1,6 +1,8 @@
 
 
 repassar i finalitzar tasques_model.php
+
+
 esborrar tots els altres fitxers que hi ha dintre de carpeta models
 
 
