@@ -1,14 +1,26 @@
-<?php
-        
-        class Conexio{
-            public static function conectar(){
-                $conexion=new mysqli("localhost", "root", "", "tododb");
-                $conexion->query("SET NAMES 'utf8'");
-                if ($mysql->connect_error)
-                    die('Error a la connexió de base de dades');
+<?php 
+    class Conexio{
 
-                return $conexion;
+        private $con;
+
+        public function __construct(){
+            $this->con = new mysqli("localhost", "root", "", "tododb");
             }
+      
+        
+        public function getTasks(){
+            $query =$this->con->query('SELECT * FROM tasks');
+
+            $consulta = [];
+
+            $i=0;
+            while($fila = $query->fetch_assoc()){
+                $consulta[$i] = $fila;
+                $i++;
+            }
+
+            return $consulta;
+
         }
     
-    ?>
+?>
