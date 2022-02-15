@@ -188,7 +188,7 @@
 <?php 
 
     // Array de proves, comentar quan sigui cridat desde el controlador
-    $tasques = array();
+    /*$tasques = array();
 
     $tasques[0] = array();
     $tasques[0]['name'] = 'Anar a la platja';
@@ -197,39 +197,39 @@
     $tasques[1] = array();
     $tasques[1]['name'] = 'Contractar asistenta';
     $tasques[1]['description'] = 'mirar anuncis, trucar ETTs, parlar amb';
-
+    */
     foreach($tasques as $tasca) {
 ?>
             <tr>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">
-                    <?php echo @$tasca['startDate'];?>                    
+                    <?php echo @$tasca['taskStart'];?>                    
                 </p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">                   
-                    <?php echo @$tasca['endDate'];?>
+                    <?php echo @$tasca['taskEnd'];?>
                 </p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">                    
-                    <?php echo @$tasca['name'];?>
+                    <?php echo @$tasca['taskName'];?>
                 </p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">                    
-                    <?php echo @$tasca['description'];?>
+                    <?php echo @$tasca['taskDescription'];?>
                 </p>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
                   <span aria-hidden class="absolute inset-0 bg-green-200 opacity-50 rounded-full"></span>
-                  <span class="relative"><?php echo @$tasca['status'];?></span>
+                  <span class="relative"><?php echo @$tasca['taskStatus'];?></span>
                 </span>
               </td>
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">
-                <?php echo @$tasca['user'];?>
+                <?php echo @$tasca['userName'];?>
                 </p>
               </td>
               <td class="px-7 py-5 border-b border-gray-200 bg-white text-sm">
