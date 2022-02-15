@@ -133,7 +133,7 @@
                   type="submit"
                   class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
                 >
-                  Desar la nova Tasca
+                  Desar Tasca
                 </button>
               </div>
             </div>
