@@ -2,7 +2,8 @@
 
 <table>
 <?php 
-
+    // mostra TOTES les variables POST rebudes. 
+    // Util mentre es fan proves
 
     foreach ($_POST as $key => $value) {
         echo "<tr>";
