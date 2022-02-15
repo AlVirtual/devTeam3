@@ -48,7 +48,7 @@
         <div class="bg-indigo-50 min-w-full shadow rounded-lg overflow-hidden">
           <form
             method="post"
-            action="../controllers/TasquesController.php"
+            action="../controllers/c_control.php"
             id=""
           >
             <div class="px-4 max-w-3xl mx-auto space-y-4 bg-indigo-50 py-2">
@@ -127,6 +127,8 @@
               </div>            
 
               <div>
+                <input type="hidden" id="accio" name="accio" value="alta">  
+                <input type="hidden" id="id" name="id" value="null">
                 <button
                   type="submit"
                   class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
