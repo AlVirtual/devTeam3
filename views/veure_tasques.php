@@ -72,7 +72,7 @@
                     type="text"
                     name="taskName"
                     id="taskName"
-                    placeholder="assumpte"
+                    placeholder="Nom de la Tasca"
                     class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </div>
@@ -108,7 +108,7 @@
                   rows="5"
                   name="description"
                   id="description"
-                  placeholder="Escriu aquí la tasca"
+                  placeholder="Descripció de la tasca"
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 ></textarea>
               </div>            
