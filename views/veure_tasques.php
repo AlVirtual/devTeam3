@@ -53,7 +53,7 @@
           >
             <div class="px-4 max-w-3xl mx-auto space-y-4 bg-indigo-50 py-2">
               <div class="w-1/4">
-                <label for="userName" class=""></label>
+                <label for="userName" class="">Usuari que crea la Tasca:</label>
                 <select
                   name="userName"
                   id="userName"
@@ -62,6 +62,19 @@
                   <option>Joan</option>
                   <option>Fidel</option>
                   <option>Albert</option>
+                </select>
+              </div>
+
+              <div class="w-1/4">
+                <label for="userName" class="">Estat inicial de la Tasca:</label>
+                <select
+                  name="userName"
+                  id="userName"
+                  class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option selected>Pendent</option>
+                  <option>En execució</option>
+                  <option>Acabada</option>
                 </select>
               </div>
 
@@ -83,7 +96,7 @@
                     type="text"
                     name="startDate"
                     id="startDate"
-                    placeholder="Hora Inici"
+                    placeholder="Data Inici"
                     class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </div>
@@ -94,7 +107,7 @@
                     type="text"
                     name="endDate"
                     id="endDate"
-                    placeholder="Hora Final"
+                    placeholder="Data Final"
                     class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </div>
@@ -171,7 +184,7 @@
           <tbody>
 <?php 
 
-    // Array de proves comentar quan sigui cridat desde el controlador
+    // Array de proves, comentar quan sigui cridat desde el controlador
     $tasques = array();
 
     $tasques[0] = array();
