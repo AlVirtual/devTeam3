@@ -28,11 +28,28 @@
             $query = $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
                                         values($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
             
+            $query = $result;
+
+            return $result;
+            
+        }
+
+
+        public function readTask($id){
+            $query = $this->con->query("SELECT * FROM tasks WHERE idTask=$id");
+            $query = $consulta;
+
+            $result = $consulta->fetch_assoc();
+
+            return $result;
+
         }
 
 
         public function updateTask($id){
             $query = $this->con->query("SELECT * FROM tasks WHERE idTask=$id");
+            
+
 
         }
 
