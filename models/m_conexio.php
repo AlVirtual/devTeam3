@@ -9,7 +9,7 @@
       
         
         public function getTasks(){
-            $query =$this->con->query('SELECT * FROM tasks');
+            $query =$this->con->query("SELECT * FROM tasks");
 
             $consulta = [];
 
@@ -22,6 +22,39 @@
             return $consulta;
 
         }
+
+
+        public function createTask($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus){
+            $query = $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
+                                        values($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
+            
+        }
+
+
+        public function updateTask($id){
+            $query = $this->con->query("SELECT * FROM tasks WHERE idTask=$id");
+
+        }
+
+
+        public function deleteTask($id){
+            $query = $this->con->query("DELETE * FROM tasks WHERE idTask=$id");
+
+        }
+        
+
+
+
+
     }
+
+
+
+
+
+
+
+
+
     
 ?>
