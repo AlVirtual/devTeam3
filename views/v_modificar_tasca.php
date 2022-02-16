@@ -24,18 +24,8 @@
 
 <?php 
 
-    // Array de proves, comentar quan sigui cridat desde el controlador
-    $tasques = array();
-
-    $tasques[0] = array();
-    $tasques[0]['id'] = 1;
-    $tasques[0]['name'] = 'Anar a la platja';
-    $tasques[0]['description'] = 'fer entrepans, carregar sombrilla, agafar nevera...';
-    $tasques[0]['usuari'] = 'Albert';
-    $tasques[0]['status'] = 'Pendent';
-    $tasques[0]['startDate'] = '15/02/2022';
-
-    foreach($tasques as $tasca) {
+    // La vista serà cridada desde el controlador que haurà creat previament la variable 
+    // $tasca
     
 ?>
 
@@ -55,9 +45,9 @@
                   id="userName"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
-                  <option <?php if (@$tasca['usuari'] == 'Joan') echo 'selected';?>>Joan</option>
-                  <option <?php if (@$tasca['usuari'] == 'Fidel') echo 'selected';?>>Fidel</option>
-                  <option <?php if (@$tasca['usuari'] == 'Albert') echo 'selected';?>>Albert</option>
+                  <option <?php if (@$tasca['userName'] == 'Joan') echo 'selected';?>>Joan</option>
+                  <option <?php if (@$tasca['userName'] == 'Fidel') echo 'selected';?>>Fidel</option>
+                  <option <?php if (@$tasca['userName'] == 'Albert') echo 'selected';?>>Albert</option>
                 </select>
               </div>
 
@@ -67,10 +57,10 @@
                   name="estatTasca"
                   id="estatTasca"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                >
-                  <option <?php if (@$tasca['status'] == 'Pendent') echo 'selected';?>>Pendent</option>
-                  <option <?php if (@$tasca['status'] == 'En execució') echo 'selected';?>>En execució</option>
-                  <option <?php if (@$tasca['status'] == 'Acabada') echo 'selected';?>>Acabada</option>
+                >                
+                  <option <?php if (@$tasca['taskStatus'] == 'Pendent') echo 'selected';?>>Pendent</option>
+                  <option <?php if (@$tasca['taskStatus'] == 'En execució') echo 'selected';?>>En execució</option>
+                  <option <?php if (@$tasca['taskStatus'] == 'Acabada') echo 'selected';?>>Acabada</option>
                 </select>
               </div>
 
@@ -81,21 +71,21 @@
                     type="text"
                     name="taskName"
                     id="taskName"
-                    value="<?php echo @$tasca['name'];?>"
+                    value="<?php echo @$tasca['taskName'];?>"
                     class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   />
                 </div>
 
                 <div class="w-1/6">  
                   <label for="startDate" class="">Data inici:</label>
-                  <input datepicker datepicker-format="dd/mm/yyyy" name="startDate" id="startDate" value="<?php echo @$tasca['startDate'];?>" type="text" 
+                  <input datepicker datepicker-format="dd/mm/yyyy" name="startDate" id="startDate" value="<?php echo @$tasca['taskStart'];?>" type="text" 
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Data Inici">                  
                 </div>
 
                 <div class="w-1/6">  
                   <label for="startDate" class="">Data Fi:</label>
-                  <input datepicker datepicker-format="dd/mm/yyyy" name="endDate" id="endDate" value="<?php echo @$tasca['endDate'];?>" type="text" 
+                  <input datepicker datepicker-format="dd/mm/yyyy" name="endDate" id="endDate" value="<?php echo @$tasca['taskEnd'];?>" type="text" 
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Data Fi">                  
                 </div>
@@ -112,12 +102,12 @@
                   name="description"
                   id="description"                  
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                ><?php echo @$tasca['description'];?></textarea>
+                ><?php echo @$tasca['taskDescription'];?></textarea>
               </div>            
 
               <div>
                 <input type="hidden" id="accio" name="accio" value="modificat">  
-                <input type="hidden" id="id" name="id" value="<?php echo @$tasca['id'];?>">
+                <input type="hidden" id="id" name="id" value="<?php echo @$tasca['idTask'];?>">
                 <button
                   type="submit"
                   class="px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600"
@@ -130,9 +120,7 @@
         </div>
       </div>
     </div>
-<?php            
-    }
-?> 
+
 
   </body>
 
