@@ -64,8 +64,8 @@
               <div class="w-1/4">
                 <label for="userName" class="">Estat:</label>
                 <select
-                  name="userName"
-                  id="userName"
+                  name="estatTasca"
+                  id="estatTasca"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
                   <option <?php if (@$tasca['status'] == 'Pendent') echo 'selected';?>>Pendent</option>
@@ -116,7 +116,7 @@
               </div>            
 
               <div>
-                <input type="hidden" id="accio" name="accio" value="modificar">  
+                <input type="hidden" id="accio" name="accio" value="modificat">  
                 <input type="hidden" id="id" name="id" value="<?php echo @$tasca['id'];?>">
                 <button
                   type="submit"

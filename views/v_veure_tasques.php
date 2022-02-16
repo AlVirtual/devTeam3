@@ -67,10 +67,10 @@
               </div>
 
               <div class="w-1/4">
-                <label for="userName" class="">Estat inicial de la Tasca:</label>
+                <label for="estatTasca" class="">Estat inicial de la Tasca:</label>
                 <select
-                  name="userName"
-                  id="userName"
+                  name="estatTasca"
+                  id="estatTasca"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
                   <option selected>Pendent</option>
@@ -81,7 +81,7 @@
 
               <div class="flex space-x-16">
                 <div class="w-1/2">
-                  <label for="taskName" class=""></label>
+                  <label for="taskName" class="">Tasca:</label>
                   <input
                     type="text"
                     name="taskName"
@@ -110,7 +110,7 @@
               </div>
 
               <div class="">
-                <label for="description" class=""></label>
+                <label for="description" class="">Descripció:</label>
                 <textarea
                   type="textarea"
                   cols="30"
