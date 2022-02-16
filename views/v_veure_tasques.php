@@ -91,27 +91,22 @@
                   />
                 </div>
 
-                <div class="w-1/6">
-                  <label for="startDate" class=""></label>
-                  <input
-                    type="text"
-                    name="startDate"
-                    id="startDate"
-                    placeholder="Data Inici"
-                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  />
+                
+
+                <div class="w-1/6">  
+                  <label for="startDate" class="">Data inici:</label>
+                  <input datepicker datepicker-format="dd/mm/yyyy" name="startDate" id="startDate" placeholder="Data Inici" type="text" 
+                  class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Data Inici">                  
                 </div>
 
-                <div class="w-1/6">
-                  <label for="endDate" class=""></label>
-                  <input
-                    type="text"
-                    name="endDate"
-                    id="endDate"
-                    placeholder="Data Final"
-                    class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                  />
+                <div class="w-1/6">  
+                  <label for="endDate" class="">Data Fi:</label>
+                  <input datepicker datepicker-format="dd/mm/yyyy" name="endDate" id="endDate" value="<?php echo @$tasca['endDate'];?>" type="text" 
+                  class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  placeholder="Data Fi">                  
                 </div>
+
               </div>
 
               <div class="">
@@ -206,6 +201,7 @@
                     <?php echo @$tasca['taskStart'];?>                    
                 </p>
               </td>
+              
               <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                 <p class="text-gray-900 whitespace-no-wrap">                   
                     <?php echo @$tasca['taskEnd'];?>
