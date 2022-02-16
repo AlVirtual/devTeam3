@@ -46,9 +46,8 @@
         }
 
 
-        public function updateTask($id){
-            $query = $this->con->query("SELECT * FROM tasks WHERE idTask=$id");
-            
+        public function updateTask($id,$userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus){
+            $query = $this->con->query("UPDATE tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) WHERE idTask=$id SET ($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
 
 
         }
