@@ -31,7 +31,7 @@ class tasques{
     public function get_idTasca(){
         return $this->idTasca;
     }
-
+//fdsafdasfdasfasdf
     public function set_idTasca($num){
         $this->idTasca = $num;
     }
