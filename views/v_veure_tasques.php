@@ -62,7 +62,7 @@
                 >
 
                 <?php 
-                  require('../models/m_altres.php');
+                  //require('../models/m_altres.php');
                   foreach ($usuaris as $usuari) {                    
                 ?>
                   <option><?php echo @$usuari;?></option>
