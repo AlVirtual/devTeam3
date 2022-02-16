@@ -60,9 +60,16 @@
                   id="userName"
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
-                  <option>Joan</option>
-                  <option>Fidel</option>
-                  <option>Albert</option>
+
+                <?php 
+                  require('../models/m_altres.php');
+                  foreach ($usuaris as $usuari) {                    
+                ?>
+                  <option><?php echo @$usuari;?></option>
+                  
+                <?php 
+                  }                    
+                ?>
                 </select>
               </div>
 
@@ -73,9 +80,13 @@
                   id="estatTasca"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
-                  <option selected>Pendent</option>
-                  <option>En execució</option>
-                  <option>Acabada</option>
+                <?php                   
+                  foreach ($estatsTasca as $estat) {                    
+                ?>
+                  <option><?php echo @$estat;?></option>  
+                <?php 
+                  }                    
+                ?>
                 </select>
               </div>
 
