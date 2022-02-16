@@ -19,6 +19,7 @@
 </table>
 
 <?php
+require('../models/m_altres.php');
 require('../models/m_conexio.php');
 
 $con = new Conexio();

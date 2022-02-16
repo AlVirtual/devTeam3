@@ -45,9 +45,16 @@
                   id="userName"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >
-                  <option <?php if (@$tasca['userName'] == 'Joan') echo 'selected';?>>Joan</option>
-                  <option <?php if (@$tasca['userName'] == 'Fidel') echo 'selected';?>>Fidel</option>
-                  <option <?php if (@$tasca['userName'] == 'Albert') echo 'selected';?>>Albert</option>
+
+                <?php 
+                  //require('../models/m_altres.php');
+                  foreach ($usuaris as $usuari) {                    
+                ?>
+                  <option <?php if (@$tasca['userName'] == $usuari) echo 'selected';?>><?php echo @$usuari;?></option>
+      
+                <?php 
+                  }                    
+                ?>
                 </select>
               </div>
 
@@ -58,9 +65,15 @@
                   id="estatTasca"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >                
-                  <option <?php if (@$tasca['taskStatus'] == 'Pendent') echo 'selected';?>>Pendent</option>
-                  <option <?php if (@$tasca['taskStatus'] == 'En execució') echo 'selected';?>>En execució</option>
-                  <option <?php if (@$tasca['taskStatus'] == 'Acabada') echo 'selected';?>>Acabada</option>
+                
+                <?php                   
+                  foreach ($estatsTasca as $estat) {                    
+                ?>
+                  <option <?php if (@$tasca['taskStatus'] == $estat) echo 'selected';?>><?php echo @$estat;?></option>
+                
+                <?php 
+                  }                    
+                ?>
                 </select>
               </div>
 
