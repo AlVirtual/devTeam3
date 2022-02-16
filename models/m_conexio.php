@@ -3,11 +3,21 @@
 
         private $con;
 
+        //constructor amb parametres de la conexió
         public function __construct(){
             $this->con = new mysqli("localhost", "root", "", "tododb");
+            if ($mysqli->connect_error) {
+                die('Error de Conexión (' . $mysqli->connect_errno . ') '
+                        . $mysqli->connect_error);
             }
+        }
+
+        //funció tancar conexió
+        public function conClose(){
+            $this->con->close();
+        }
       
-        
+        //funció per obtenir totes les tasques
         public function getTasks(){
             $query =$this->con->query("SELECT * FROM tasks");
 
