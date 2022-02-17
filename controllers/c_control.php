@@ -19,13 +19,46 @@
 </table>
 
 <?php
-require('../models/m_altres.php');
-require('../models/m_conexio.php');
+;
+$accio = $_POST['accio'];
+$id = $_POST['id'];
+$userName = $_POST['userName'];
+$taskName = $_POST['taskName'];
+$taskDescription = $_POST['taskDescription'];
+$taskStart = $_POST['taskStart'];
+$taskEnd = $_POST['taskEnd'];
+$taskStatus = $_POST['taskStatus'];
 
-$con = new Conexio();
+require('../models/tasques_model.php');
+$con = new Tasques();
 
-$tasques = $con->getTasks();
+switch ($accio) {
+    case 'afegir':
+        
+        $tasques = $con->createTask($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus);
+        require('../views/v_veure_tasca.php');
+        break;
+    case 'modificar';
 
-require('../views/v_veure_tasques.php')
- 
+        $tasques = $con->updateTask($id);
+        require('../views/v_modificar_tasca.php');
+        break;
+    case 'esborrar';
+
+        $tasques = $con->deleteTask($id);
+        require('../views/v_veure_tasca.php');
+        break;
+    case 'obtenir';
+        $tasques = $con->readTask($id);
+
+        require('../views/v_veure_tasca.php');
+        break;
+    case 'obtenirTotes';
+        $tasques = $con->getTask();
+
+        require('../views/v_veure_tasca.php');
+        break;
+}
+
+
 ?>
