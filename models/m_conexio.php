@@ -6,10 +6,6 @@
         //constructor amb parametres de la conexió
         public function __construct(){
             $this->con = new mysqli("localhost", "root", "", "tododb");
-            if ($mysqli->connect_error) {
-                die('Error de Conexión (' . $mysqli->connect_errno . ') '
-                        . $mysqli->connect_error);
-            }
         }
 
         //funció tancar conexió
@@ -38,18 +34,15 @@
             $query = $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
                                         values($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
             
-            $query = $result;
-
-            return $result;
+            return $query;
             
         }
 
 
         public function readTask($id){
             $query = $this->con->query("SELECT * FROM tasks WHERE idTask=$id");
-            $query = $consulta;
-
-            $result = $consulta->fetch_assoc();
+            
+            $result = $query->fetch_assoc();
 
             return $result;
 
@@ -68,10 +61,6 @@
 
         }
         
-
-
-
-
     }
 
 
