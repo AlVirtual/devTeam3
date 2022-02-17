@@ -1,25 +1,6 @@
-<table>
-<?php 
-    // mostra TOTES les variables POST rebudes. 
-    // Util mentre es fan proves
-
-    foreach ($_POST as $key => $value) {
-        echo "<tr>";
-        echo "<td>";
-        echo $key;
-        echo "</td>";
-        echo "<td>";
-        echo $value;
-        echo "</td>";
-        echo "</tr>";
-    }
-
-
-?>
-</table>
 
 <?php
-;
+
 $accio = $_POST['accio'];
 $id = $_POST['id'];
 $userName = $_POST['userName'];
@@ -29,25 +10,29 @@ $taskStart = $_POST['taskStart'];
 $taskEnd = $_POST['taskEnd'];
 $taskStatus = $_POST['taskStatus'];
 
+require('../models/m_altres.php');
 require('../models/m_conexio.php');
 $con = new Conexio();
 
 switch ($accio) {
-    case 'afegir':
-        
-        $tasques = $con->createTask(
+    case 'afegir':        
+        $con->createTask(
             $userName,
             $taskName,
             $taskDescription,
             $taskStart,
             $taskEnd,
             $taskStatus);
-        require('../views/v_veure_tasca.php');
+        require('../views/v_veure_tasques.php');
         break;
-    case 'modificat';
 
-        $tasques = $con->updateTask(
-            
+    case 'modificar':
+        $tasca = $con->readTask($id);
+        require('../views/v_modificar_tasca.php');
+        break;
+
+    case 'modificat':
+        $tasques = $con->updateTask(            
             $id,
             $userName,
             $taskName,
@@ -55,26 +40,23 @@ switch ($accio) {
             $taskStart,
             $taskEnd,
             $taskStatus
-        
-        
         );
-        require('../views/v_modificar_tasca.php');
+        require('../views/v_veure_tasques.php');
         break;
 
     case 'esborrar';
-
-        $tasques = $con->deleteTask($id);
-        require('../views/v_veure_tasca.php');
+        $con->deleteTask($id);
+        require('../views/v_veure_tasques.php');
         break;
+        
     case 'obtenir';
-        $tasques = $con->readTask($id);
-
-        require('../views/v_veure_tasca.php');
+        $tasca = $con->readTask($id);
+        require('../views/v_veure_tasques.php');
         break;
+        
     case 'obtenirTotes';
         $tasques = $con->getTasks();
-
-        require('../views/v_veure_tasca.php');
+        require('../views/v_veure_tasques.php');
         break;
 }
 

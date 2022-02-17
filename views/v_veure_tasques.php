@@ -134,7 +134,7 @@
               </div>            
 
               <div>
-                <input type="hidden" id="accio" name="accio" value="alta">  
+                <input type="hidden" id="accio" name="accio" value="afegir">  
                 <input type="hidden" id="id" name="id" value="null">
                 <button
                   type="submit"

@@ -37,10 +37,10 @@
         $taskStart,
         $taskEnd,
         $taskStatus){
-            $query = $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
+            $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
                                         values($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
             
-            return $query;
+            
             
         }
 
@@ -64,14 +64,15 @@
             $taskEnd,
             $taskStatus
         ){
-            $query = $this->con->query("UPDATE tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) WHERE idTask=$id SET ($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
+            
+            $this->con->query("UPDATE tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) WHERE idTask=$id SET ($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
 
 
         }
 
 
         public function deleteTask($id){
-            $query = $this->con->query("DELETE * FROM tasks WHERE idTask=$id");
+            $this->con->query("DELETE * FROM tasks WHERE idTask=$id");
 
         }
         
