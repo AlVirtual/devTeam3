@@ -72,7 +72,7 @@ switch ($accio) {
         require('../views/v_veure_tasca.php');
         break;
     case 'obtenirTotes';
-        $tasques = $con->getTask();
+        $tasques = $con->getTasks();
 
         require('../views/v_veure_tasca.php');
         break;
