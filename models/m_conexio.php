@@ -30,7 +30,13 @@
         }
 
 
-        public function createTask($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus){
+        public function createTask(
+            $userName,
+        $taskName,
+        $taskDescription,
+        $taskStart,
+        $taskEnd,
+        $taskStatus){
             $query = $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
                                         values($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
             
@@ -49,7 +55,15 @@
         }
 
 
-        public function updateTask($id,$userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus){
+        public function updateTask(
+            $id,
+            $userName,
+            $taskName,
+            $taskDescription,
+            $taskStart,
+            $taskEnd,
+            $taskStatus
+        ){
             $query = $this->con->query("UPDATE tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) WHERE idTask=$id SET ($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
 
 

@@ -29,20 +29,38 @@ $taskStart = $_POST['taskStart'];
 $taskEnd = $_POST['taskEnd'];
 $taskStatus = $_POST['taskStatus'];
 
-require('../models/tasques_model.php');
-$con = new Tasques();
+require('../models/m_conexio.php');
+$con = new Conexio();
 
 switch ($accio) {
     case 'afegir':
         
-        $tasques = $con->createTask($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus);
+        $tasques = $con->createTask(
+            $userName,
+            $taskName,
+            $taskDescription,
+            $taskStart,
+            $taskEnd,
+            $taskStatus);
         require('../views/v_veure_tasca.php');
         break;
-    case 'modificar';
+    case 'modificat';
 
-        $tasques = $con->updateTask($id);
+        $tasques = $con->updateTask(
+            
+            $id,
+            $userName,
+            $taskName,
+            $taskDescription,
+            $taskStart,
+            $taskEnd,
+            $taskStatus
+        
+        
+        );
         require('../views/v_modificar_tasca.php');
         break;
+
     case 'esborrar';
 
         $tasques = $con->deleteTask($id);
