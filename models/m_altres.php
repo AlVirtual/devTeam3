@@ -10,7 +10,7 @@
 
     $estatsTasca[] = null;
     $estatsTasca[0] = 'Pendent';
-    $estatsTasca[1] = 'En execució';
+    $estatsTasca[1] = 'Fent-se';
     $estatsTasca[2] = 'Acabada';
 
 
