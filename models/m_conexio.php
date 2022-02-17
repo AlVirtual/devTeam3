@@ -37,10 +37,9 @@
         $taskStart,
         $taskEnd,
         $taskStatus){
+
             $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
-                                        values($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
-            
-            
+                                        values('$userName','$taskName','$taskDescription','$taskStart','$taskEnd','$taskStatus')");
             
         }
 

@@ -34,6 +34,8 @@ if (!isset($accio) || is_null($accio)) {
             $taskStart,
             $taskEnd,
             $taskStatus);
+
+        $tasques = $con->getTasks();
         require('../views/v_veure_tasques.php');
         break;
 
