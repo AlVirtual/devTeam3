@@ -40,8 +40,6 @@
 
             $this->con->query("INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
                                         values('$userName','$taskName','$taskDescription','$taskStart','$taskEnd','$taskStatus')");
-            echo "INSERT INTO tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) 
-            values('$userName','$taskName','$taskDescription','$taskStart','$taskEnd','$taskStatus')";
         }
 
 
