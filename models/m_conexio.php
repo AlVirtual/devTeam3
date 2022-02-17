@@ -10,7 +10,7 @@
 
         //funció tancar conexió
         public function conClose(){
-            $this->con->close();
+            //$this->con->close();
         }
       
         //funció per obtenir totes les tasques
@@ -64,16 +64,22 @@
             $taskEnd,
             $taskStatus
         ){
+             $this->con->query('
+                UPDATE tasks 
+                SET userName = "'.$userName.'",
+                taskName= "'.$taskName.'",
+                taskDescription = "'.$taskDescription.'",
+                taskStart = "'.$taskStart.'",
+                taskEnd = "'.$taskEnd.'",
+                taskStatus = "'.$taskStatus.'"
+                WHERE idTask='.$id.';');
             
-            $this->con->query("UPDATE tasks(userName,taskName,taskDescription,taskStart,taskEnd,taskStatus) WHERE idTask=$id SET ($userName,$taskName,$taskDescription,$taskStart,$taskEnd,$taskStatus)");
-
 
         }
 
 
-        public function deleteTask($id){
-            $this->con->query("DELETE * FROM tasks WHERE idTask=$id");
-
+        public function deleteTask($id){  
+            $this->con->query("DELETE FROM tasks WHERE idTask = $id");
         }
         
     }

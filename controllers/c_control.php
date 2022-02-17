@@ -1,20 +1,31 @@
 
 <?php
 
-$accio = $_POST['accio'];
-$id = $_POST['id'];
-$userName = $_POST['userName'];
-$taskName = $_POST['taskName'];
-$taskDescription = $_POST['taskDescription'];
-$taskStart = $_POST['taskStart'];
-$taskEnd = $_POST['taskEnd'];
-$taskStatus = $_POST['taskStatus'];
+if (isset($_POST["accio"])) {
+    $accio = $_POST['accio'];
+    $id = $_POST['id'];
+
+    if (isset($_POST["userName"])) {
+        $userName = $_POST['userName'];
+        $taskName = $_POST['taskName'];
+        $taskDescription = $_POST['taskDescription'];
+        $taskStart = $_POST['taskStart'];
+        $taskEnd = $_POST['taskEnd'];
+        $taskStatus = $_POST['taskStatus'];
+    }
+}
+
 
 require('../models/m_altres.php');
 require('../models/m_conexio.php');
 $con = new Conexio();
 
-switch ($accio) {
+if (!isset($accio) || is_null($accio)) {
+    $tasques = $con->getTasks();
+    require('../views/v_veure_tasques.php');    
+
+} else {
+    switch ($accio) {
     case 'afegir':        
         $con->createTask(
             $userName,
@@ -32,7 +43,7 @@ switch ($accio) {
         break;
 
     case 'modificat':
-        $tasques = $con->updateTask(            
+        $con->updateTask(            
             $id,
             $userName,
             $taskName,
@@ -41,23 +52,28 @@ switch ($accio) {
             $taskEnd,
             $taskStatus
         );
+
+        $tasques = $con->getTasks();
         require('../views/v_veure_tasques.php');
         break;
 
-    case 'esborrar';
+    case 'esborrar':
         $con->deleteTask($id);
+        
+        $tasques = $con->getTasks();
         require('../views/v_veure_tasques.php');
         break;
         
-    case 'obtenir';
+    case 'obtenir':
         $tasca = $con->readTask($id);
         require('../views/v_veure_tasques.php');
         break;
         
-    case 'obtenirTotes';
+    default:
         $tasques = $con->getTasks();
         require('../views/v_veure_tasques.php');
         break;
+    }
 }
 
 

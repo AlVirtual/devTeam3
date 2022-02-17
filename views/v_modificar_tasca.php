@@ -61,8 +61,8 @@
               <div class="w-1/4">
                 <label for="userName" class="">Estat:</label>
                 <select
-                  name="estatTasca"
-                  id="estatTasca"
+                  name="taskStatus"
+                  id="taskStatus"
                   class="mt-1 w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 >                
                 
@@ -90,15 +90,15 @@
                 </div>
 
                 <div class="w-1/6">  
-                  <label for="startDate" class="">Data inici:</label>
-                  <input datepicker datepicker-format="dd/mm/yyyy" name="startDate" id="startDate" value="<?php echo @$tasca['taskStart'];?>" type="text" 
+                  <label for="taskStart" class="">Data inici:</label>
+                  <input datepicker datepicker-format="dd/mm/yyyy" name="taskStart" id="taskStart" value="<?php echo @$tasca['taskStart'];?>" type="text" 
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Data Inici">                  
                 </div>
 
                 <div class="w-1/6">  
                   <label for="startDate" class="">Data Fi:</label>
-                  <input datepicker datepicker-format="dd/mm/yyyy" name="endDate" id="endDate" value="<?php echo @$tasca['taskEnd'];?>" type="text" 
+                  <input datepicker datepicker-format="dd/mm/yyyy" name="taskEnd" id="taskEnd" value="<?php echo @$tasca['taskEnd'];?>" type="text" 
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="Data Fi">                  
                 </div>
@@ -112,8 +112,8 @@
                   type="textarea"
                   cols="30"
                   rows="5"
-                  name="description"
-                  id="description"                  
+                  name="taskDescription"
+                  id="taskDescription"                  
                   class="mt-1 block w-full py-2 px-3 border-b border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 ><?php echo @$tasca['taskDescription'];?></textarea>
               </div>            
