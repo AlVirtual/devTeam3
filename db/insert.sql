@@ -1,3 +1,0 @@
-INSERT INTO tododb.tasks values ('1','Albert','Pasa la ITV','la de coxte no, la del cap','2022/02/14 12:00:00','2022/02/15 13:00:00', 'pendent');
-INSERT INTO tododb.tasks values ('2','Joan','Fer calçotada','comprar calçots i salsa','2022/02/14 12:00:00','2022/02/15 13:00:00', 'pendent');
-INSERT INTO tododb.tasks values ('3','Fidel','Fer un app','crear una app per gestionar tasques','2022/02/14 12:00:00','2022/02/15 13:00:00','pendent');
